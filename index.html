@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Jie-Yu-Wang_Index</title>
+    <link rel=stylesheet type="text/css" href="css/main.css">
+
+    <script>
+        setInterval(play, 3000); // 每隔 3 秒呼叫 1 次 play()
+        setInterval(txts, 1500);
+        var index = 0; // 用來控制每次要顯示的圖片索引    
+
+        function play() {
+            // 取得縮圖的 img 元素集合
+            var imgs = document.getElementById("thumbs").
+            getElementsByTagName("img");
+            // 取得大圖的 img 元素
+            var bigImg = document.getElementById("big");
+
+            // 播下一張照片前, 先取消目前相片的橘色背景         
+            imgs[index].classList.remove("selected");
+            index++; // 遞增索引值, 以播下一張照片
+
+            // 若索引值超過範圍, 則設為0, 表示再重頭開始播放
+            if (index == imgs.length) index = 0;
+
+            imgs[index].classList.add("selected");
+
+            // 將大圖 img 的 src 屬性設為小圖之 src 屬性值
+            bigImg.setAttribute("src",
+                imgs[index].getAttribute("src"));
+
+        }
+
+        function txts() {
+            var container = document.getElementById("box");
+            container.appendChild(container.firstChild);
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="header">
+            <h2>Jie-Yu-Wang</h2>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="skill.html" >經驗與專長</a></li>
+                <li><a href="contactme.html" >聯絡我</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="up">
+                 <div id="txtlist">
+                <ul id="box">
+                    <li>
+                        <h1>專注</h1>
+                    </li>
+                    <li>
+                        <h1>好奇心</h1>
+                    </li>
+                    <li>
+                        <h1>熱情</h1>
+                    </li>
+                </ul>
+            </div>
+
+                <div>
+                    <img id="big" src="media/concentrated.jpg">
+                </div>
+                <div id="thumbs">
+                    <img class="small selected" src="media/concentrated.jpg">
+                    <img class="small" src="media/Curious.jpg">
+                    <img class="small" src="media/Passionate.jpg">
+
+                </div>
+
+
+
+            </div>
+           
+            <div class="down">
+                <div id="aboutMe">
+
+                    <h3>關於我</h3>
+                    <p>
+                        王婕宇<br>
+                        這邊放置一些自我介紹。
+
+                    </p>
+
+                </div>
+                <div id="profilePhoto">
+                    <img src="media/profile.jpg">
+                </div>
+
+            </div>
+        </div>
+
+
+        <div id="footer">
+            <h4>© 2019 All Rights Reserved. Terms of use and Privacy Policy </h4>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Jie-Yu-Wang_ContactMe</title>
+    <link rel=stylesheet type="text/css" href="css/main.css">
+    <style>
+        .photos {
+            float: left;
+            display: block;
+            margin-bottom: 1%;
+          
+        }
+
+        .box {
+            float: left;
+            width: 31%;
+            text-align: center;
+            margin: 0% 1% 0% 1%;
+            
+        }
+
+        img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+   
+     
+
+        .topic {
+            float: left;
+            width: 100%;
+            text-align: center;
+            border-bottom: 2px #000 solid;
+            border-top: 2px #000 solid;
+            height: 50px;
+            line-height: 50px;
+            margin-bottom: 1%;
+
+        }
+        
+        .contact{
+            float: left;
+            margin-bottom: 10%;
+            width: 100%;
+            
+        }
+        
+        .info{
+            float: left;
+            width:49%;
+            line-height: 50px;
+             
+        }
+        
+        .table{
+            float:left;
+            width: 49%;
+           
+        }
+        
+        form{          
+            padding: 5%;
+            border-left: 2px #000 solid;
+            margin: 5% 0%;
+        }
+        
+        input,textarea {
+            border:1px black solid;
+            margin: 8px;
+            width: 100%;
+            padding: 3px;
+            font-size: 14px;
+            font-family: 微軟正黑體;
+        }
+            
+        
+        input[type=button], input[type=submit], input[type=reset] {
+            width: 30%;
+            float: right;
+            background-color: #000000;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        
+        
+        
+        
+        
+    </style>
+    <script>
+        //宣告預設表單內容為空 （你想要的話也可以加東西）
+    var initSubject='',initBody='';
+ 
+    //按下傳送按鈕後執行
+    function submitHandler(){
+        var to = "boboys501@gmail.com";//傳送給我
+        var name = nameText.value;//讀取ID為 nameTextuser 物件中的值
+        var email = emailText.value;
+        var tel = telText.value;
+        var subject = subText.value;
+//把user填的資料都塞到 mail body 中
+        var body = ""+bodyText.value+'%0A%0A%0A';//%0A是換行 換了三行
+            body += "From："+nameText.value+'%0A';
+            body += "Email："+emailText.value+'%0A';
+            body += "Tel："+telText.value;
+//傳送的主要程式碼
+        mailTo.href="mailto:"+to+"?subject="+subject+"&body="+body;
+        mailTo.click();
+    }
+//在body onload
+    function init(){
+        subText.value=initSubject;
+        toText.value=initTo;
+        bodyText.value=initBody;
+    }
+</script>
+</head>
+
+<body onload="init()">
+
+    <div id="wrapper">
+        <div id="header">
+            <h2>Jie-Yu-Wang</h2>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="skill.html">經驗與專長</a></li>
+                <li><a href="contactme.html">聯絡我</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h2 class="topic">攝影作品分享</h2>
+            <div class="photos">
+
+                <div class="box">
+                    <img src="media/1.JPG">
+                    <p>平菁街櫻花</p>
+                    <img src="media/4.JPG">
+                    <p>小琉球</p>
+
+
+                </div>
+                <div class="box">
+                    <p>北海岸</p>
+                    <img src="media/5.JPG">
+
+                    <p>隨手拍</p>
+                    <img src="media/2.JPG">
+                </div>
+
+                <div class="box">
+                    <img src="media/3.JPG">
+
+                    <p>三峽滿月圓</p>
+                    <img src="media/6.JPG">
+
+                    <p>沖繩</p>
+
+                </div>
+
+
+
+
+            </div>
+            <h2 class="topic">聯絡我</h2>
+            <div class="contact">
+                <div class="info">
+
+                    <p>
+                        所在地區：北台灣<br />
+                        連絡電話：+886XX-XXX-XXX<br />
+                        聯絡信箱：boboys501@gmail.com<br />
+                    </p>
+
+                </div>
+
+                <div class="table">
+                    <form enctype="text/plain" accept-charset="utf-8">
+                        <!-- 寄件者姓名    -->
+                        <input id="nameText" type="text" name="Name" value size="30" placeholder="姓名(Name)" required> <!-- required 必填欄位 ，placeholder 預設內容-->
+
+                        <!-- 寄件者email -->
+                        <input id="emailText" type="email" name="Email" value size="30" placeholder="聯絡信箱(Email)" required>
+
+                        <!-- 寄件者電話 -->
+                        <input id="telText" type="tel" name="Phone" value size="30" aria-invalid="false" placeholder="電話(Phone)" required>
+
+                        <!-- 郵件主旨 -->
+                        <input id="subText" type="text" name="Subject" value size="30" aria-invalid="false" placeholder="主旨(Subject)" required>
+
+                        <!-- 郵件內容 -->
+                        <textarea id="bodyText" name="your-message" cols="40" rows="10" aria-required="true" aria-invalid="false" placeholder="您的訊息(Your Message)" required></textarea>
+
+                        <!-- 傳送按鈕 -->
+                        <div>
+                            <input type="button" value="送出訊息" onclick="submitHandler();">
+                            <a id="mailTo"></a>
+                            <input type="reset" value="清除重填">
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div id="footer">
+            <h4>© 2019 All Rights Reserved. Terms of use and Privacy Policy </h4>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

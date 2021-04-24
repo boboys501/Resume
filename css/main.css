@@ -1,0 +1,149 @@
+ /* 重置所有margin及padding */
+ * {
+     padding: 0;
+     margin: 0;
+ }
+
+ /* 網頁內容最外層包裝, 主要是用margin來做左右置中 */
+ #wrapper {
+     margin: 0 auto;
+ }
+
+ body {
+     font-family: 微軟正黑體;
+ }
+
+ /* =======標題區======== */
+ #header {
+     height: 50px;
+     position: relative;
+     background-color: #000000;
+ }
+
+ #header ul {
+     position: absolute;
+     right: 10%;
+     top: 8px;
+ }
+
+ #header li {
+     float: left;
+     list-style-type: none;
+     border-right: 1px #fff solid;
+
+ }
+
+ #header li a:hover {
+     color: black;
+     background-color: #ffffff;
+ }
+
+ #header li a {
+     display: block;
+     width: 100px;
+     height: 36px;
+     line-height: 36px;
+     text-decoration: none;
+     color: #ffffff;
+     background-color: #000000;
+     text-align: center;
+     border-left: 1px #fff solid;
+     
+ }
+
+ #header h2 {
+     left: 10%;
+     top: 10px;
+     color: white;
+     position: absolute;
+ }
+
+ /* =======中間內文區======== */
+ .content {
+     margin: 2%;
+     padding-left: 10%;
+     padding-right: 10%;
+ }
+
+ #txtlist {
+     height: 50px;
+ }
+
+ #box {
+     font-size: 17px;
+     overflow: hidden;
+     list-style: none;
+     height: 80%;
+     text-align: center;
+
+ }
+
+ #box li {
+     height: 40px;
+     white-space: normal;
+     overflow: hidden;
+ }
+
+ .selected {
+     background: black;
+ }
+
+ .small {
+     width: 10%;
+     float: right;
+     margin: 5px;
+     padding: 3px;
+     border: 1px black solid;
+ }
+
+ #big {
+     width: 85%;
+     float: left;
+     margin: 2px;
+     padding: 3px;
+     border: 1px black solid;
+ }
+
+
+
+ .down {
+     padding-top: 3%;
+     clear: both;
+     display: block;
+ }
+
+ #aboutMe {
+     position: relative;
+     width: 50%;
+     height: 300px;
+     float: left;
+
+
+ }
+
+ #aboutMe h3,
+ p {
+     padding: 10%;
+
+ }
+
+ #profilePhoto img {
+     position: relative;
+     width: 50%;
+     padding-bottom: 8%;
+     float: right;
+
+ }
+
+ /* =======版權宣告區======== */
+ #footer {
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     text-align: center;
+     color: white;
+     background-color: black;
+     height: 40px;
+     line-height: 40px;
+     width: 100%;
+ }
